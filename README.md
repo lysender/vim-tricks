@@ -2,6 +2,8 @@
 
 Various vim tricks I learn through the years
 
+vim cheatsheet - https://vim.rtorr.com/
+
 ## Working around quotes
 
 - `f"` or `f'` - jumps to the next quote
