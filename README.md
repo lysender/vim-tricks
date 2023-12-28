@@ -4,10 +4,10 @@ Various vim tricks I learn through the years
 
 ## Working around quotes
 
-- `f"` or `f'` - jumps to the next quote, assumes cursor within quoted text
-- `F"` or `F'` - jumps to the previous quote, assumes cursor within quoted text
-- `t"` or `t'` - jumps to the last char before the next quote, assumes cursor within quoted text
-- `T"` or `T'` - jumps to the first char after the previous quote, assumes cursor within quoted text
+- `f"` or `f'` - jumps to the next quote
+- `F"` or `F'` - jumps to the previous quote
+- `t"` or `t'` - jumps before the next occurrence of quote
+- `T"` or `T'` - jumps after the previous occurence of quote
 
 To combine with other commands, we can do the following:
 
@@ -16,44 +16,21 @@ To combine with other commands, we can do the following:
 
 When used repeatedly, you can do the following shortcut:
 
-- `d;` - repeats the previous quote movement, ie: `t"` or `t'`, then execute the delete command
+- `d;` - repeats the previous `t` or `T` or `f` or `F` motions, ie: `t"` or `t'`, then execute the delete command
 
-## Working around brackets or parenthesis or even quotes
+## Working around brackets or parenthesis or quotes
 
-To highlight contents within `{}` or `()` or `[]` while inside:
+To highlight contents within `{}` or `()` or `[]` or `""` while inside:
 
-```
-vi}
-vi)
-vi]
-```
-Note: You can also use the opening bracket but the cursor will jump to it instead.
+- `vi}`
+- `vi)`
+- `vi]`
+- `vi"`
+- `vi'`
+- `viw` - highlight a word
+- `viW` - highlight a word (can contain punctuation)
 
-To delete contents within `{}` or `()` or `[]` while inside:
-
-```
-di}
-di)
-di]
-```
-
-Can also work around quotes:
-
-```
-vi"
-```
-
-Can even work around a world:
-
-```
-viw
-```
-
-Or a group of text (no spaces in between):
-
-```
-viW
-```
+Note: You can also use the opening bracket or parenthesis.
 
 ## Using nvim-surround
 
